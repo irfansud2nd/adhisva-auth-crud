@@ -9,17 +9,17 @@ const RequireAuth = () => {
   const location = useLocation();
 
   return user ? (
-    <div className="w-full min h-screen grid grid-cols-[1fr_auto] gap-1">
+    <div className="w-full 2xl:container 2xl:mx-auto min h-screen grid grid-cols-[1fr_auto] gap-1">
       <div className="w-full h-full grid grid-rows-[auto_1fr] gap-1">
         <Navbar />
         <div className="w-full h-full grid grid-cols-[auto_1fr] gap-1">
-          <MainSidebar />
+          <MainSidebar className="max-md:hidden" />
           <div className="p-2 rounded bg-slate-100">
             <Outlet />
           </div>
         </div>
       </div>
-      <UserSideBar />
+      <UserSideBar className="max-md:hidden" />
     </div>
   ) : (
     <Navigate to={"/login"} state={{ from: location }} replace />
