@@ -1,4 +1,3 @@
-// context/AuthContext.tsx
 import axios from "@/lib/axios";
 import React, { createContext, useState, useEffect, useContext } from "react";
 
@@ -27,7 +26,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   );
   const [accessToken, setAccessToken] = useState<string | null>(null);
 
-  // Cek autentikasi saat halaman di-load
   useEffect(() => {
     checkAuth();
   }, []);
@@ -47,7 +45,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const logout = async () => {
-    await axios.get("auth/logout", { withCredentials: true }); // Endpoint untuk menghapus token refresh di server
+    await axios.get("auth/logout", { withCredentials: true });
     setAccessToken(null);
     setUser(null);
   };

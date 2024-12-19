@@ -28,10 +28,8 @@ const BlogForm = ({ blog }: Props) => {
         published,
       };
       if (blog) {
-        // UPDATE
         await axios.put(`blog/${blog.id}`, data);
       } else {
-        // CREATE
         await axios.post("blog", data);
       }
       setTitle("");

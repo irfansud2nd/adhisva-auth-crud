@@ -14,7 +14,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true, // Izinkan cookies dikirim
+  credentials: true,
 };
 
 const app = express();

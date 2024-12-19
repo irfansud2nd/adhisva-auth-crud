@@ -14,17 +14,17 @@ datasource db {
 }
 
 model User {
-  email        String  @id
-  name         String
-  password     String
+  email        String  @id @db.VarChar(100)
+  name         String  @db.VarChar(100)
+  password     String  @db.VarChar(100)
   refreshToken String? @map("refresh_token") @db.VarChar(300)
   Blog         Blog[]
 }
 
 model Blog {
   id          Int      @id @default(autoincrement())
-  title       String
-  slug        String   @unique
+  title       String   @db.VarChar(255)
+  slug        String   @unique @db.VarChar(255)
   content     String   @db.Text
   published   Boolean  @default(false)
   updatedAt   DateTime @updatedAt @map("updated_at")

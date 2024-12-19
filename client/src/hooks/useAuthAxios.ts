@@ -4,7 +4,6 @@ import axios from "@/lib/axios";
 const useAuthAxios = () => {
   const { accessToken, checkAuth } = useAuth();
 
-  // Tambahkan interceptor request untuk menambahkan Authorization header
   axios.interceptors.request.use(
     (config) => {
       if (accessToken) {

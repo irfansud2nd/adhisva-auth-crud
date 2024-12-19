@@ -79,9 +79,9 @@ export const register = async (req, res) => {
       },
     });
 
-    res.status(500).json({ message: "User sucessfully registered" });
+    res.status(200).json({ message: "User sucessfully registered" });
   } catch (error) {
-    res.status(200).json({ error });
+    res.status(500).json({ error });
   }
 };
 
